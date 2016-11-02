@@ -1,0 +1,39 @@
+import java.util.Scanner;
+/*
+ Flip Coin and print percentage of Heads and Tails
+a)I/P -> The number of times to Flip Coin. Ensure it is positive integer.
+b)Logic -> Use Random Function to get value between 0 and 1. If < 0.5 then tails or heads
+c)O/P -> Percentage of Head versus Tails
+ 
+ */
+
+public class Flipcoin {
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int head = 0;
+		int tail = 0;
+		Scanner n = new Scanner(System.in);
+		System.out.println("Enter the value till which the coin should be flipped:");
+		int t = n.nextInt();
+		System.out.println("Entered value is "+ t);
+		for(int i = 0;i < t;i++)
+		{
+			Math.random();
+			if(Math.random() < 0.5)
+			{
+				tail++;
+			}
+			else
+				head++;
+		}
+       System.out.println("No. of times head occurrence is " +head);
+       System.out.println("No. of times tail occurrence is " +tail);
+       double percentaget = head/t*100;
+       double percentageh = 100 - percentaget;
+       System.out.printf("The percentage of head occurrence in above even is %f\n"+ percentageh);
+       System.out.printf("The percentage of tail occurrence in above even is %f\n"+ percentaget);
+	}
+
+}

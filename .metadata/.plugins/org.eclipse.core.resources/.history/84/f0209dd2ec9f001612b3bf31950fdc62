@@ -1,0 +1,42 @@
+package com.bridgelabz.utility;
+
+import java.util.Scanner;
+
+public class Utility {
+	Scanner n = new Scanner(System.in);
+
+	// Use for reading user input(complete line) through keyboard
+	public String readText() {
+		String Username = n.nextLine();
+		return Username;
+	}
+
+	// Use for Replacing source string from targeted string
+	public String replaceAll(String Original, String Username,
+			String NewUsername) {
+		String Changed = Original.replaceAll(Username, NewUsername);
+		return Changed;
+	}
+	public boolean IsAnagram(String FirstString,String SecondString)
+	{
+		String String1, String2;
+		
+		
+		String1 = removeSpace(FirstString);
+		
+		String1 = String1.toUpperCase();
+		
+		String2 = removeSpace(SecondString);
+		
+		String2 = String2.toUpperCase();
+		
+		String1 = arrange(String1);
+		
+		String2 = arrange(String2);
+		
+		if (String1.equals(String2) == true) {
+			return true;
+		} else
+			return false;
+	}
+}

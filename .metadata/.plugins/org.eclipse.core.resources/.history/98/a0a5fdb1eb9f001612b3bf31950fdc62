@@ -1,0 +1,20 @@
+package com.bridgelabz.utility;
+
+import java.util.Scanner;
+
+public class Utility {
+	Scanner n = new Scanner(System.in);
+
+	// Use for reading user input(complete line) through keyboard
+	public String ReadText() {
+		String Username = n.nextLine();
+		return Username;
+	}
+
+	// Use for Replacing source string from targeted string
+	public String ReplaceAll(String Original, String Username,
+			String NewUsername) {
+		String Changed = Original.replaceAll(Username, NewUsername);
+		return Changed;
+	}
+}

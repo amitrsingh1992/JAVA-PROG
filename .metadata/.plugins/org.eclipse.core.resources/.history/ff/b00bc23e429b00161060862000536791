@@ -1,0 +1,65 @@
+import java.util.Scanner;
+/*
+ * Personal Data Modification
+ ***************************************************************************************************************************************************************************************************************************************************************************************************************
+Description -> Read in the following message: Hello <<name>>
+,We have your full name as <<full name>> in our system.
+ your contact number is 91-xxxxxxxxxx. 
+ Please,let us know in case of any clarification Thank you BridgeLabz 01/01/2016.
+ Use Regex to replace name, full name, Mobile#, and Date with proper value.
+1)I/P -> read in the Message
+
+2)Logic -> Use Regex to do the following
+a)Replace <<name>> by first name of the user ( assume you are the user)
+b)replace <<full name>> by user full name.
+c)replace any occurrence of mobile number that should be in format 91-xxxxxxxxxx by 
+  your contact number.
+d)replace any date in the format XX/XX/XXXX by current date.
+
+3)O/P -> Print the Modified Message.
+
+*/
+public class Detailreplacement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String username , newusername;
+		String fullname , newfullname;
+		String contactnumber , newcontactnumber;
+		String date,currentdate;
+		Scanner n = new Scanner(System.in);
+		System.out.println("Enter Username:");
+		username = n.nextLine();
+		System.out.println("Enter Fullname:");
+		fullname = n.nextLine();
+		System.out.println("Enter Contactnumber:");
+		contactnumber = n.nextLine();
+		System.out.println("Enter Date:");
+		date = n.nextLine();
+		
+		String str = new String("Hello " + username );
+		String str1 = new String(",We have your full name as " + fullname + " in our system.");
+		String str2 = new String("your contact number is 91-"+contactnumber+".");
+		String str3 = new String("Please,let us know in case of any clarification Thank you BridgeLabz "+date+".");
+		System.out.println("Detail Before Replacement:");
+		System.out.println(str+str1+str2+str3);
+		
+		System.out.println("Enter New Username:");
+		newusername = n.nextLine();
+		System.out.println("Enter New Fullname:");
+		newfullname = n.nextLine();
+		System.out.println("Enter New Contactnumber:");
+		newcontactnumber = n.nextLine();
+		System.out.println("Enter Current Date:");
+		currentdate = n.nextLine();
+		
+		String str4 =str.replaceAll(username, newusername);
+		String str5 =str1.replaceAll(fullname, newfullname);
+		String str6 =str2.replaceAll(contactnumber, newcontactnumber);
+		String str7 =str3.replaceAll(date, currentdate);
+		
+		System.out.println("Detail After Replacement:");
+		System.out.println(str4+str5+str6+str7);
+	}
+
+}

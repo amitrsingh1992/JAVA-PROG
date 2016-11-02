@@ -1,0 +1,120 @@
+import java.util.Random;
+import java.util.Scanner;
+import java.io.PrintWriter;
+/*Cross Game or Tic-Tac-Toe Game 
+
+Desc -> Write a Program to play a Cross Game or Tic-Tac-Toe Game. 
+        Player 1 is the Computer and the Player 2 is the user. 
+        Player 1 take Random Cell that is the Column and Row. 
+I/P -> Take User Input for the Cell i.e. Col and Row to Mark the ‘X’
+Logic -> The User or the Computer can only take the unoccupied cell. 
+         The Game is played till either wins or till draw...
+O/P -> Print the Col and the Cell after every step.
+Hint -> The Hints is provided in the Logic. Use Functions for the Logic...
+*/
+public class CrossGame {
+	
+	protected static int getRandomNumberInRange(int min, int max) {
+
+		Random r = new Random();
+		return r.nextInt((max - min) + 1) + min;
+	}
+	/*
+	public static  char[][] computer(char comchoice,char[][] cross)
+	{	
+		int max = 2;
+		int min = 0;
+		boolean flag = true;
+		
+		int rows=getRandomNumberInRange(min, max);
+		int cols=getRandomNumberInRange(min, max);
+		
+		flag = chkCondition(cross,rows,cols);
+		if(flag)
+		{
+			cross[rows][cols]=comchoice;
+			System.out.print(cross[rows][cols]);
+		}
+		else
+			computer(comchoice,cross);
+		return cross;
+	}
+	public static char[][] user(char choice,char[][] cross)
+	{ 
+		int rows = 0;
+		int cols = 0;
+		boolean flag = true;
+		Scanner m = new Scanner(System.in);
+		System.out.println("Enter row value:");
+		rows =m.nextInt();
+		System.out.println("Enter cols value:");
+		cols =m.nextInt();
+		System.out.println("User selected r"+rows+"c"+cols+"as input.");
+		flag = chkCondition(cross,rows,cols);
+		if(flag)
+		{
+			cross[rows][cols]=choice;
+			System.out.print(cross[rows][cols]);
+		}
+		else
+			user(choice,cross);
+			
+		m.close();
+		return cross;
+		
+		
+		
+	}
+	public static void testWinCondition(char[][] cross)
+	{
+		int x=0;
+		if( x ==1)
+		System.out.println("User won this round");
+		else
+		System.out.println("Computer won this round");
+	}
+	public static boolean chkCondition(char[][] cross ,int rows, int cols)
+	{
+		boolean flag = true;
+			if(cross[rows][cols] == 0)
+				flag =true;
+			else 
+				flag=false;
+			return flag;
+	}
+		*/
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner n = new Scanner(System.in);
+		PrintWriter pw = new PrintWriter(System.out);
+		
+		char choice = 'X';
+		char  comchoice = 'O';
+		char[][] cross= {{'.','.','.'},{'.','.','.'},{'.','.','.'}};
+	
+		
+		System.out.println("User input :" + choice);
+		System.out.println("Computer input : " + comchoice);
+		System.out.println();
+		for (int i = 0; i<cross.length; i++)
+		{
+  	      for(int j = 0; j<cross.length; j++)
+  	      {
+  		    pw.print(cross[i][j] + " ");
+  		    pw.flush();
+  	      }
+  	      System.out.println();
+		}
+		/*for(int i = 0;i<9;i++ )
+		{
+			if(i==0 || i%2 == 0)
+				computer(comchoice,cross);
+			else
+				user(choice,cross);
+		}
+			testWinCondition(cross);
+		*/
+		n.close();
+	}
+
+}

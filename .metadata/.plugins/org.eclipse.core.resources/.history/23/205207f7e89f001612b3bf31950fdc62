@@ -1,0 +1,19 @@
+package com.bridgelabz.utility;
+
+import java.util.Scanner;
+
+public class Utility {
+	Scanner n;
+	
+	public String ReadText()
+	{
+		String Username=n.nextLine();
+		return Username;
+	}
+	
+	public String ReplaceAll(String Original,String Username,String NewUsername)
+	{
+		String Changed = Original.replaceAll(Username, NewUsername);
+		return Changed;
+	}
+}

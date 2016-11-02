@@ -1,0 +1,69 @@
+import java.util.Scanner;
+/*
+Gambler
+a)Desc -> Simulates a gambler who start with $stake and place fair $1 bets until he/she goes broke (i.e. has no money) or reach $goal. Keeps track of the number of times he/she wins and the number of bets he/she makes. Run the experiment N times, averages the results, and prints them out.
+b)I/P -> $Stake, $Goal and Number of times
+c)Logic -> Play till the gambler is broke or has won
+d)O/P -> Print Number of Wins and Percentage of Win and Loss.
+*/
+
+public class Gambler {
+
+	public static void gamble(int cash,int aim)
+	{ 
+		final int bid = 1;
+		int wincount = 0;
+		int losscount = 0;
+		double winper;
+		double lossper;
+		int n;
+		boolean flag = true;
+		while(flag)
+		{
+			
+				Math.random();
+				if(Math.random() < 0.5)
+				{
+					losscount++;
+					cash+=2;
+					if(cash >= aim)
+						flag = false ;
+				}
+				else
+				{
+					wincount++;
+					cash-=bid;
+					if(cash <= 0)
+						flag = false ;
+				}
+					 
+		}
+		System.out.println("Total win = " + wincount);
+		System.out.println("Total loss = " + losscount);
+		
+		n= wincount+losscount;
+		System.out.println("Total number of bet is " + n);
+		System.out.println("Final amount left with Gambler is " + cash);
+		winper = (double) wincount/n*100;
+		System.out.println("The winning percentage of Gambler while gambling is " + winper);
+		lossper = (double) 100-winper;
+		System.out.println("The losing percentage of Gambler while gambling is " + lossper);
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner n = new Scanner(System.in);
+		System.out.println("Enter total amount with which gambler want to play:");
+		int total = n.nextInt();
+		System.out.println("The Gambler having $" + total +" to gamble");
+		System.out.println();
+		System.out.println("Enter amount that Gambler's aim to win from gamble:");
+		int goal = n.nextInt();
+		System.out.println("The total amount that Gambler set as target is $"+ goal);
+		System.out.println();
+		gamble(total,goal);
+		n.close();
+	}
+
+}

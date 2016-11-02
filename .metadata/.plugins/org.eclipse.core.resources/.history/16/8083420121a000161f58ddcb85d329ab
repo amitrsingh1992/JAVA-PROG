@@ -1,0 +1,28 @@
+/*import java.util.Scanner;
+/**
+ * 
+ *WAP To Replace A String From The Given String And Then Print
+ */
+/*public class NameReplacement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String Username,NewUsername;
+		
+		
+		Scanner n = new Scanner(System.in);
+		System.out.println("Enter username:");
+		Username = u.ReadT();
+		System.out.print("Before Replacement:  ");
+		String OldText = new String("Hello " + Username + ",How are you?");
+		System.out.println(OldText);
+		System.out.println("Enter new Username:");
+		new_username = n.nextLine();
+		String NewText = u.ReplaceAll(OldText,Username,NewUsername);
+		System.out.println("After Replacement:  "+NewText);
+		n.close();
+		
+	}
+
+}
+*/

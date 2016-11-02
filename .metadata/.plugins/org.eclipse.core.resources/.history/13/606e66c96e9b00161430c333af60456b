@@ -1,0 +1,22 @@
+/*
+Bubble Sort 
+a)Desc -> Reads in integers prints them in sorted order using Bubble Sort
+b)I/P -> read in the list ints
+c)O/P -> Print the Sorted List 
+ 
+*/
+public class BubbleSort {
+
+	/*public static void arraySort(int[] list)
+	{
+		
+	}*/
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char [] mylist = {1,8,12,0,4,19,3};
+		System.out.println("The array list which is to be sorted :");
+		for(int element : mylist)
+			System.out.print(element+"  ");
+	}
+
+}

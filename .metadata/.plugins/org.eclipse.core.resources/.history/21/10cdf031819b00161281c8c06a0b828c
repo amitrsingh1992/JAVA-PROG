@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+/*
+ Insertion Sort 
+ a)Desc -> Reads in strings from standard input and prints them in sorted order.
+ Uses insertion sort.
+ b)I/P -> read in the list words
+ c)Logic -> Use Insertion Sort to sort the words in the String array
+ d)O/P -> Print the Sorted List
+
+ */
+
+public class InsertionSort {
+	public static void insertionSort(int[] insert)
+			{
+				
+				int temp;
+					
+				for(int j= 1;j < insert.length ; j++)
+					{
+						for(int i =0;i<j;i++)
+						{
+							if(insert[0+i]>insert[j])
+								{
+									temp = insert[i];
+									insert[j] = insert[j];
+									insert[j] = temp;
+								}
+						
+						}
+					}
+				for(int k =0 ;k < insert.lenth;k++)
+					System.out.print(insert[k]+"  ");
+			}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner n = new Scanner(System.in);
+		System.out.println("No. of element included in link list : ");
+		int s = n.nextInt();
+		int[] p = new int[s];
+		for (int i = 0; i < s; i++) {
+			p[i] = n.nextInt();
+		}
+		System.out.println("The list of element included (Before Sorting): ");
+		for (int element : p)
+			System.out.print(element + "  ");
+		System.out.println("The lis of element After Sorting "+ insertionSort(p));
+		
+		n.close();
+
+	}
+
+}

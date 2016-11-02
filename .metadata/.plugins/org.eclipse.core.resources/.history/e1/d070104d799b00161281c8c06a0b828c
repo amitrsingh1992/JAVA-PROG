@@ -1,0 +1,31 @@
+import java.util.Scanner;
+/*
+Insertion Sort 
+a)Desc -> Reads in strings from standard input and prints them in sorted order.
+ Uses insertion sort.
+b)I/P -> read in the list words
+c)Logic -> Use Insertion Sort to sort the words in the String array
+d)O/P -> Print the Sorted List
+ 
+*/
+
+public class InsertionSort {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner n = new Scanner(System.in);
+		int i = n.nextInt();
+		double d = n.nextDouble();
+		n.nextLine();
+		String s = n.nextLine();
+		
+		System.out.println("Integer : " +i);
+		System.out.println("Double : " +d);
+		
+		System.out.println("String : " +s);
+		
+		n.close();
+	}
+
+}
