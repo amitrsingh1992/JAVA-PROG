@@ -11,50 +11,45 @@ from the input file. Have functions in the Class to calculate the value of each
 stock and the value of total stocks
  */
 package com.bridgelabz.programs;
+
 import com.bridgelabz.utility.Utility;
 
-class StockReport extends Stock
-{
-	public void StockReport(String[] Company,int[] ShareNo,int[] SharePrice,int num)
-	
+class StockReport extends Stock {
+	public void StockReport1(String[] Company, int[] ShareNo, int[] SharePrice, int num)
+
 	{
 		long worth = 0;
-	
-	for(int i = 0;i<num;i++ )
-	{
-		System.out.println("Company Name:" + Company[i]);
-		System.out.println("Total Number of Company share:" + ShareNo[i]);
-		System.out.println("Amount of Each share:" +SharePrice[i]);
-		System.out.println("Company's Total share worth price :"+ (SharePrice[i]*ShareNo[i]));
-		System.out.println();
-	}
-	for(int i = 0;i<num;i++)
-	 worth += (SharePrice[i]*ShareNo[i]);
-	System.out.println("Total Stock Market involes amount of $"+worth);
-		}
 
-	
+		for (int i = 0; i < num; i++) {
+			System.out.println("Company Name:" + Company[i]);
+			System.out.println("Total Number of Company share:" + ShareNo[i]);
+			System.out.println("Amount of Each share:" + SharePrice[i]);
+			System.out.println("Company's Total share worth price :" + (SharePrice[i] * ShareNo[i]));
+			System.out.println();
+		}
+		for (int i = 0; i < num; i++)
+			worth += (SharePrice[i] * ShareNo[i]);
+		System.out.println("Total Stock Market involes amount of $" + worth);
+	}
+
 }
 
 public class Stock {
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Utility u = new Utility();
 		StockReport sr = new StockReport();
-		
+
 		System.out.println("Enter Number of present in a StockMarket:");
-		int num=u.readInteger();
-		System.out.println("According to input provided ,There are "+num+
-							"number of companies in Stock Market.");
-		System.out.println("Enter Company name and its no. of share and"+
-							" price of each share:");
+		int num = u.readInteger();
+		System.out.println("According to input provided ,There are " + num + "number of companies in Stock Market.");
+		System.out.println("Enter Company name and its no. of share and" + " price of each share:");
 		String[] Company = new String[num];
 		int[] ShareNo = new int[num];
 		int[] SharePrice = new int[num];
-		for(int i = 0 ; i<num ; i++)
-		{
-			System.out.println((i+1)+".");
+		for (int i = 0; i < num; i++) {
+			System.out.println((i + 1) + ".");
 			System.out.println("Company name:");
 			u.readText();
 			Company[i] = u.readText();
@@ -65,7 +60,8 @@ public class Stock {
 			System.out.println();
 		}
 		System.out.println("Total Stock Detail:");
-		sr.StockReport(Company,ShareNo,SharePrice,num);
+		System.out.println();
+		sr.StockReport1(Company, ShareNo, SharePrice, num);
 		System.out.println();
 	}
 
