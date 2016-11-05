@@ -1,0 +1,51 @@
+/**
+15. Question to find your number
+    a. Desc -> takes a command-line argument N, asks you to think of a number
+       between 0 and N-1, where N = 2^n, and always guesses the answer with n
+       questions.
+    b. I/P -> the Number N and then recursively ask true/false if the number is between
+             a high and low value
+    c. Logic -> Use Binary Search to find the number
+    d. O/P -> Print the intermediary number and the final answer
+ */
+package com.bridgelabz.programs;
+import com.bridgelabz.utility.Utility;
+
+public class NumberGuess {
+	public static int count = 0 ;
+	public static int stepsValue(int x)
+	{	
+	
+		
+		while(x >= 0)
+		{
+			System.out.println("x="+x);
+			x=x/2;
+			count++;
+			if(x==0)
+				break;
+		}
+		return count;
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Utility u = new Utility();
+
+		int x = Integer.parseInt(args[0]);
+		  
+		  int n= u.powerMethod(31)-1;
+		
+		int Step=stepsValue(x);
+		System.out.println("steps ="+Step+1);
+		
+		for(int i = 0 ;i<Step;i++)
+		{
+			
+					
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,61 @@
+/**
+ 13. Stock Report
+a. Desc -> Write a program to read in Stock Names, Number of Share, Share Price.
+Print a Stock Report with total value of each Stock and the total value of Stock.
+b. I/P -> N number of Stocks, for Each Stock Read In the Share Name, Number of
+Share, and Share Price
+c. Logic -> Calculate the value of each stock and the total value
+d. O/P -> Print the Stock Report.
+e. Hint -> Create Stock and Stock Portfolio Class holding the list of Stocks read
+from the input file. Have functions in the Class to calculate the value of each
+stock and the value of total stocks
+ */
+package com.bridgelabz.programs;
+import com.bridgelabz.utility.Utility;
+
+public class Stock {
+	
+	public static long stockReport(String[] Company,int[] ShareNo,int[] SharePrice,int num)
+	{
+		long worth = 0;
+		for(int i = 0;i<num;i++ )
+		{
+			System.out.println("Company Name:" + Company[i]);
+			System.out.println("Total Number of Company share:" + ShareNo[i]);
+			System.out.println("Amount of Each share:" +SharePrice[i]);
+			System.out.println("Company's Total share worth price :"+ (SharePrice[i]*ShareNo[i]));
+		}
+		for(int i = 0;i<num;i++)
+		 worth += (SharePrice[i]*ShareNo[i]);
+		return worth;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Utility u = new Utility();
+		
+		
+		System.out.println("Enter Number of present in a StockMarket:");
+		int num=u.readInteger();
+		System.out.println("According to input provided ,There are "+num+
+							"number of companies in Stock Market.");
+		System.out.println("Enter Company name and its no. of share and"+
+							" price of each share:");
+		String[] Company = new String[num];
+		int[] ShareNo = new int[num];
+		int[] SharePrice = new int[num];
+		for(int i = 0 ; i<num ; i++)
+		{
+			System.out.println("Company name:");
+			Company[i] = u.readText();
+			System.out.println("No of shares:");
+			ShareNo[i] = u.readInteger();
+			System.out.println("Price Of Each Share:");
+			SharePrice[i] = u.readInteger();
+			System.out.println();
+		}
+		long TotalWorth = stockReport(Company,ShareNo,SharePrice,num);
+		System.out.println("Total Stock Detail:");
+		System.out.println(TotalWorth);
+	}
+
+}

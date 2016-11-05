@@ -1,0 +1,57 @@
+/*
+28. Regular Expression Demonstration
+a. Desc -> Read in the following message: Hello <<name>>, We have your full
+           name as <<full name>> in our system. your contact number is 91-xxxxxxxxxx.
+           Please,let us know in case of any clarification Thank you BridgeLabz 01/01/2016.
+           Use Regex to replace name, full name, Mobile#, and Date with proper value.
+b. I/P -> read in the Message
+c. Logic -> Use Regex to do the following
+   i.Replace <<name>> by first name of the user ( assume you are the user)
+   ii.replace <<full name>> by user full name.
+   iii.replace any occurance of mobile number that should be in format
+       91-xxxxxxxxxx by your contact number.
+   iv.replace any date in the format XX/XX/XXXX by current date.
+d. O/P -> Print the Modified Message. 
+*/
+
+
+package com.bridgelabz.programs;
+
+import com.bridgelabz.utility.Utility;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+public class RegularExpressionDemonstration {
+
+	
+		// TODO Auto-generated method stub
+		private static String REGEX = "<<name>>";
+		private static String REGEX1 = "<<full name>>";
+		private static String REGEX2 = "91-xxxxxxxxxx";
+		private static String REGEX3 = "01/01/2016";
+		private static String INPUT = "Hello <<name>>, We have your full"+
+		                              "name as <<full name>> in our system."+
+				                      "your contact number is 91-xxxxxxxxxx."+
+				                      " Please,let us know in case of any clarification"+
+				                      " Thank you BridgeLabz 01/01/2016.";
+		   private static String REPLACE = "Amit Singh";
+		   private static String REPLACE1 = "Amit Ramashankar Singh";
+		   private static String REPLACE2 = "9594368083";
+		   private static String REPLACE3 = "04/11/2016";
+		   public static void main(String[] args) {
+		      Pattern p = Pattern.compile(REGEX);
+		      Pattern p1 = Pattern.compile(REGEX1);
+		      Pattern p2 = Pattern.compile(REGEX2);
+		      Pattern p3 = Pattern.compile(REGEX3);
+		      
+		      // get a matcher object
+		      Matcher m = p.matcher(INPUT); 
+		      INPUT = m.replaceAll(REPLACE);
+		      INPUT = m.replaceAll(REPLACE1);
+		      INPUT = m.replaceAll(REPLACE2);		      
+		      INPUT = m.replaceAll(REPLACE3);
+		      System.out.println(INPUT);
+	}
+
+}

@@ -31,6 +31,12 @@ public class Utility {
 		int Input = n.nextInt();
 		return Input;
 	}
+	
+	public boolean readBoolean() {
+		boolean Input = n.nextBoolean();
+		return Input;
+	}
+
 
 	// Use for getting Random integer value between two given range
 	public int getRandomNumberInRange(int MinimumValue, int MaximumValue) {

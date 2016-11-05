@@ -1,0 +1,65 @@
+/**
+15. Question to find your number
+    a. Desc -> takes a command-line argument N, asks you to think of a number
+       between 0 and N-1, where N = 2^n, and always guesses the answer with n
+       questions.
+    b. I/P -> the Number N and then recursively ask true/false if the number is between
+             a high and low value
+    c. Logic -> Use Binary Search to find the number
+    d. O/P -> Print the intermediary number and the final answer
+ */
+package com.bridgelabz.programs;
+import com.bridgelabz.utility.Utility;
+
+public class NumberGuess {
+	public static int stepReq(int Range)
+	{
+		int count = 0 ;
+		while(Range >= 0)
+		{
+			Range = Range/2;
+			count++;
+			if(Range == 0)
+				break;
+		}
+		
+		return count;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Utility u = new Utility();
+		int low = 0;
+		int answer = 0;
+		System.out.println("Enter the range from between which "+
+							"you want to play GuessNumber Game.");
+		int Range= Integer.parseInt(args[0]);
+	
+		int high = Range;
+		int mid = high/2+1;
+		System.out.println("So,your guess number should be between "+
+							"0 - " + Range);
+		int Steps=stepReq(Range);
+		System.out.println("According to range set your answer will "+	
+							"come in "+Steps +" steps.");
+		for(int i= 0;i<Steps;i++)
+		{
+		System.out.println("Is it between " + low + " to " + mid+".");
+		System.out.println("true or false ?");
+		String choice=u.readText();
+		if(choice == "true")
+		{
+			mid=mid/2;
+			
+		}
+		else
+		{
+			low=mid+1;
+			mid=high;
+		}
+		if(i==Steps-1)
+			 answer = mid;
+		}
+		System.out.println("Your Number was "+answer);
+	}
+
+}

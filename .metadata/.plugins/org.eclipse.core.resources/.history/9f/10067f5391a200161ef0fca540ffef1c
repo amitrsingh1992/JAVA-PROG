@@ -1,0 +1,39 @@
+/**
+15. Question to find your number
+    a. Desc -> takes a command-line argument N, asks you to think of a number
+       between 0 and N-1, where N = 2^n, and always guesses the answer with n
+       questions.
+    b. I/P -> the Number N and then recursively ask true/false if the number is between
+             a high and low value
+    c. Logic -> Use Binary Search to find the number
+    d. O/P -> Print the intermediary number and the final answer
+ */
+package com.bridgelabz.programs;
+import com.bridgelabz.utility.Utility;
+
+public class NumberGuess {
+	static Utility u = new Utility();
+	static int count = 0;
+	public static int stepsValue(int cmdarg)
+	{
+		while(cmdarg>=0)
+		{
+			cmdarg/=2;
+			count++;
+			if(cmdarg==0)
+				break;
+		}
+		return count;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Choose your number within integer value range(positive only): ");
+		int FirstArgs = Integer.parseInt(args[0]);
+		int Step = stepsValue(FirstArgs);
+		//System.out.println("Step needed=" + Step);
+		int value=u.powerMethod(Step)-1;
+		System.out.println("So your value is in range of 0 - "+ value);
+		
+	}
+
+}

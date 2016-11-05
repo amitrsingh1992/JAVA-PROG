@@ -1,0 +1,76 @@
+/*
+23. Simulate Banking Cash Counter
+    a. Desc -> Create a Program which creates Banking Cash Counter where people
+       come in to deposit Cash and withdraw Cash. Have an input panel to add people
+       to Queue to either deposit or withdraw money and dequeue the people. Maintain
+       the Cash Balance.
+    b. I/P -> Panel to add People to Queue to Deposit or Withdraw Money and dequeue
+    c. Logic -> Write a Queue Class to enqueue and dequeue people to either deposit
+       or withdraw money and maintain the cash balance
+*/
+package com.bridgelabz.programs;
+
+
+import com.bridgelabz.utility.Utility;
+
+
+public class BankCashCounter{
+	static long  totalAmount=100000000;
+	public static void deposit(int Depositamount)
+	{
+		
+	}
+	public static void withdraw(int withdrawalamount)
+	{
+		if(withdrawalamount<=10000)
+		totalAmount -= withdrawalamount;
+		else
+			System.out.println("Pls withdraw amount less than our equal to 10000.");
+	}
+	public static boolean checkBalance(long totalAmount)
+	{
+	   boolean status = true;
+	   
+	   if(totalAmount<5000000)
+	    status = false;
+	   return status;
+	}
+	public static void amountAvailableWithBank()
+	{
+		System.out.println("Amount Available with Bank for Transaction is "+totalAmount);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Utility u = new Utility();
+		
+		int choice;
+		boolean flag=true;
+		do
+		{
+		System.out.println("1.New Customer");
+		System.out.println("2.Deposit Amount");
+		System.out.println("3.Withdrawal Amount");
+		System.out.println("4.Check Balance");
+		System.out.println("5.Total Amount Available");
+		System.out.println("6.Queue Status");
+		
+		switch(choice)
+		{
+		case 2:	System.out.print("Enter amount to be deposited");
+				int depositamount=u.readInteger();
+				deposit(depositamount);
+			   	break;
+		case 3:	boolean status=checkBalance(totalAmount);
+				int withdrawalamount=u.readInteger();
+				if(withdrawalamount<50000)
+				withdraw(withdrawalamount);
+				else
+			    break;
+		case 4:	amountAvailableWithBank();
+				break;
+	
+		}
+		}
+		while(flag);
+	}
+}

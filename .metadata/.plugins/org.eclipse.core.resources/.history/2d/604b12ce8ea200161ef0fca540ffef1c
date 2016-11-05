@@ -1,0 +1,61 @@
+/**
+15. Question to find your number
+    a. Desc -> takes a command-line argument N, asks you to think of a number
+       between 0 and N-1, where N = 2^n, and always guesses the answer with n
+       questions.
+    b. I/P -> the Number N and then recursively ask true/false if the number is between
+             a high and low value
+    c. Logic -> Use Binary Search to find the number
+    d. O/P -> Print the intermediary number and the final answer
+ */
+/*package com.bridgelabz.programs;
+import com.bridgelabz.utility.Utility;
+
+public class NumberGuess {
+	public static int count = 0 ;
+	static Utility u = new Utility();
+	static int lowerlimit = 0;
+	static int upperlimit= u.powerMethod(31)-1;
+	static int midlimit=(upperlimit+lowerlimit)/2;
+	public static boolean conditionCheck(int low,int up)
+	{
+		boolean flag = true;
+		System.out.println("Is number between "+lowerlimit+" and "+midlimit);
+		System.out.println("choice:");
+		String choice = u.readText();
+		if(choice=="yes")
+			System.out.println("Is number between "+lowerlimit+" and "+midlimit/2);
+		else
+			upperlimit=
+		//return flag;
+	}
+	public static int stepsValue(int x)
+	{	
+	
+		
+		while(x >= 0)
+		{
+			//System.out.println("x="+x);
+			x=x/2;
+			count++;
+			if(x==0)
+				break;
+		}
+		return count;
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		int x = Integer.parseInt(args[0]);
+		
+		int Step=stepsValue(x);
+		for(int i = 0;i<Step;i++)
+		{	
+	    boolean flag=conditionCheck(lowerlimit,upperlimit,Step);
+		}
+		
+	}
+
+}*/

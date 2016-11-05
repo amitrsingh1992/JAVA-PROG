@@ -1,0 +1,72 @@
+/**
+15. Question to find your number
+    a. Desc -> takes a command-line argument N, asks you to think of a number
+       between 0 and N-1, where N = 2^n, and always guesses the answer with n
+       questions.
+    b. I/P -> the Number N and then recursively ask true/false if the number is between
+             a high and low value
+    c. Logic -> Use Binary Search to find the number
+    d. O/P -> Print the intermediary number and the final answer
+ */
+package com.bridgelabz.programs;
+import com.bridgelabz.utility.Utility;
+
+public class NumberGuess {
+	static Utility u = new Utility();
+	static int low ;
+	static int mid ;
+	static int high ;
+	static int count = 0;
+	public static int stepsValue(int cmdarg)
+	{
+		while(cmdarg>=0)
+		{
+			cmdarg/=2;
+			count++;
+			if(cmdarg==0)
+				break;
+		}
+		return count;
+	}
+	public static boolean chkChoice(String opinion,int mid,int low,int high)
+	{
+		boolean choice = true;
+		if(opinion == "true")
+		{
+			mid=mid/2;
+		}
+		else
+		{
+			low=mid+1;
+			mid=high;
+		}
+		count--;
+		return choice;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Choose your number within integer value range(positive only): ");
+		boolean flag = true;
+	    int answer=0;
+		int Range = Integer.parseInt(args[0]);
+		int MinStep = stepsValue(Range);
+		//System.out.println("Step needed=" + Step);
+		int value=u.powerMethod(MinStep)-1;
+		low = 0;
+		high = value;
+		mid =(low+high)/2;
+		
+		System.out.println("So your value is in range of 0 - "+ value);
+		while(flag)
+		{
+			System.out.println("So,is it between "+low+" or "+mid);
+			String choice = u.readText();
+			boolean chk=chkChoice(choice,mid,low,high);
+			if(count==0)
+				break;
+		}
+		answer = mid;
+		System.out.println("Your number is " + answer);
+	}
+
+}
