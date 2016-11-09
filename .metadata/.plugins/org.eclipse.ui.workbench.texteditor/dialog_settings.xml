@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="310" key="DIALOG_WIDTH"/>
-		<item value="96" key="DIALOG_Y_ORIGIN"/>
-		<item value="495" key="DIALOG_X_ORIGIN"/>
-		<item value="464" key="DIALOG_HEIGHT"/>
-		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="u.readInteger()" key="selection"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
-		<item value="LosingPercentage" key="selection"/>
 		<list key="findhistory">
+			<item value="Node"/>
+			<item value="scan.nextInt()"/>
+			<item value="u.inputInteger();"/>
+			<item value="u.input"/>
 			<item value="loss"/>
 			<item value="winper"/>
 			<item value="tic"/>
 			<item value="s"/>
-			<item value="insert"/>
-			<item value="A2"/>
-			<item value="A1"/>
-			<item value=""/>
 		</list>
 		<list key="replacehistory">
+			<item value="u.readInteger()"/>
+			<item value="u.readInteger();"/>
 			<item value="LosingPercentage"/>
 			<item value="WinningPercentage"/>
 			<item value="Input"/>
 			<item value="InputList"/>
 			<item value="String2"/>
 			<item value="String1"/>
-			<item value="A"/>
-			<item value="Arr"/>
 		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="310" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="464" key="DIALOG_HEIGHT"/>
+		<item value="101" key="DIALOG_Y_ORIGIN"/>
+		<item value="552" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

@@ -1,4 +1,4 @@
-/**
+/*
  13. Stock Report
 a. Desc -> Write a program to read in Stock Names, Number of Share, Share Price.
 Print a Stock Report with total value of each Stock and the total value of Stock.

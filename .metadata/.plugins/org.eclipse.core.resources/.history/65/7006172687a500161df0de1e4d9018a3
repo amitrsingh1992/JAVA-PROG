@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package com.bridgelabz.utility;
+
+/**
+ * @author bridgeit
+ *
+ */
+public class MyLinkedList {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
